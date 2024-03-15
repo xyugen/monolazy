@@ -5,12 +5,22 @@ import { useState } from 'react';
 
 const App = () => {
   const diceNumbers: number[] = Array.from({ length: 12 }, (_, index) => index + 1);
-  const [diceRolls, setDiceRolls] = useState([]);
+  const [diceRolls, setDiceRolls] = useState<number[]>([]);
+  const [checkedState, setCheckedState] = useState<boolean[]>(new Array(diceNumbers.length).fill(false));
   
   const handleReroll = () => {
-    toast.info('Re-rolled', {
-      className: 'toast-reroll',
-    })
+    if (diceRolls.length > 0) {
+      toast.info('Re-rolled', {
+        className: 'toast-reroll',
+      })
+      
+      setDiceRolls([])
+      setCheckedState(new Array(diceNumbers.length).fill(false)); 
+    } else {
+      toast.warning('Already re-rolled!', {
+        className: 'toast-reroll',
+      })
+    }
   }
 
   const handleDiceClick = (diceNumber: number) => {
@@ -18,6 +28,16 @@ const App = () => {
       className: 'toast-dice',
       icon: '🎲',
     })
+
+    setDiceRolls([...diceRolls, diceNumber])
+  }
+
+  const handleDicedChecked = (index: number) => {
+    setCheckedState((prevState) => {
+      const newState = [...prevState];
+      newState[index] = !prevState[index];
+      return newState;
+    });
   }
 
   return (
@@ -33,11 +53,14 @@ const App = () => {
         ))}
       </div>
 
-      <div className='diced-list'>
+      <div className='diced-list h-full'>
         {diceRolls.map((diceRoll, index) => (
           <div className='diced-number' key={index}>
-            <input name={'dice' + index} id={'dice' + index} type="checkbox" />
-            <label htmlFor={'dice' + index}>{diceRoll}</label>
+            <div>
+              <input name={'dice' + index} id={'dice' + index} type="checkbox" onChange={() => handleDicedChecked(index)} />
+              <label htmlFor={'dice' + index} style={{ textDecoration: checkedState[index] ? 'line-through' : 'none' }}>{diceRoll}</label>
+            </div>
+            
           </div>
         ))
         }
