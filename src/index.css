@@ -9,6 +9,8 @@
     --color-success: #22c55e;
     --color-error: #ef4444;
     --color-warning: #e9c24d;
+
+    --transition: all 0.10s ease;
 }
 
 * {
@@ -41,6 +43,9 @@ h6 {
 button {
     outline: none;
     border: none;
+    background: none;
+    color: var(--color-foreground);
     font-family: "Poppins", sans-serif;
     font-weight: 600;
+    transition: var(--transition);
 }

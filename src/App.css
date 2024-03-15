@@ -5,11 +5,47 @@
   padding: 10px 20px;
 }
 
+.reset-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid var(--color-warning);
+  cursor: pointer;
+}
+
+:hover.reset-button {
+  background-color: var(--color-warning);
+  color: var(--color-background);
+}
+
+.clear-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid var(--color-error);
+  cursor: pointer;
+}
+
+.dice-button-container {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 10px 20px;
+}
+
 .dice-button {
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: var(--color-primary);
-  color: var(--color-foreground);
-  font-weight: 600;
+  font-size: large;
+  border: 2px solid var(--color-primary);
   cursor: pointer;
+}
+
+:hover.dice-button {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.w-full {
+  width: 100%;
 }
