@@ -3,7 +3,7 @@ import { AlignCenter, AlignLeft, AlignRight } from '../Assets'
 
 const AlignmentButtons = () => {
     const handleAlignment = (alignment: string) => {
-        document.body.style.justifyContent = alignment;
+        document.body.className = alignment;
     }
 
     return (

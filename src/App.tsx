@@ -1,14 +1,20 @@
 import { Toaster, toast } from 'sonner';
 import './App.css'
 import DiceButton from './Components/DiceButton'
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Trash } from './Assets';
 import AlignmentButtons from './Components/AlignmentButtons';
+import autoAnimate from '@formkit/auto-animate';
 
 const App = () => {
   const diceNumbers: number[] = Array.from({ length: 12 }, (_, index) => index + 1);
   const [diceRolls, setDiceRolls] = useState<number[]>([]);
   const [checkedState, setCheckedState] = useState<boolean[]>(new Array(diceNumbers.length).fill(false));
+  const parent = useRef(null)
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+  }, [parent])
   
   const handleReroll = () => {
     if (diceRolls.length > 0) {
@@ -73,7 +79,7 @@ const App = () => {
         ))}
       </div>
 
-      <div className='diced-list h-full'>
+      <div className='diced-list h-full' ref={parent}>
         {diceRolls.map((diceRoll, index) => (
           <div className='diced-number' key={index}>
             <div>
