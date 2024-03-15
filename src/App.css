@@ -1,6 +1,7 @@
 #root {
   display: flex;
   flex-direction: row;
+  flex-direction: row;
   justify-content: center;
   transition: all 0.5s ease-in-out;
   max-height: 29rem;
@@ -8,6 +9,7 @@
 
 .container {
   width: 460px;
+  min-width: 300px;
   min-width: 300px;
   max-width: 460px;
 }
