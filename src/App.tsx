@@ -102,7 +102,7 @@ const App = () => {
       <div className='diced-list h-full' ref={parent}>
         {diceRolls.map((diceRoll, index) => (
           <div className='diced-number' key={index}>
-            <div onClick={() => handleDicedChecked(index)}>
+            <div>
               <p className='diced-number-label'>{index + 1}.</p>
               <input name={'dice' + index} id={'dice' + index} type="checkbox" onChange={() => handleDicedChecked(index)} checked={checkedState[index]} />
               <label className='diced-label' htmlFor={'dice' + index} style={{ textDecoration: checkedState[index] ? 'line-through' : 'none' }}>{diceRoll}</label>

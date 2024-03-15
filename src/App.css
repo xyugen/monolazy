@@ -1,7 +1,5 @@
 #root {
   display: flex;
-  flex-direction: row;
-  flex-direction: row;
   justify-content: center;
   transition: all 0.5s ease-in-out;
   max-height: 29rem;
@@ -9,8 +7,6 @@
 
 .container {
   width: 460px;
-  min-width: 300px;
-  min-width: 300px;
   max-width: 460px;
 }
 
@@ -100,7 +96,7 @@
   justify-content: space-between;
 }
 
-.diced-number > * {
+.diced-number>* {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -118,7 +114,7 @@
   cursor: pointer;
 }
 
-.alignment-options > button:hover {
+.alignment-options>button:hover {
   background-color: var(--color-secondary);
   color: var(--color-background);
   cursor: pointer;
