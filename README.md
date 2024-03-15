@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# Monolazy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Monolazy is an application designed to enhance your Monopoly gaming experience by allowing you to play with the "Reroll" app. With Monolazy, you can conveniently choose the numbers you want to roll and list them for reroll. The app simplifies the process of managing rerolls, ensuring a smooth and enjoyable gaming session.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Easy-to-Use: Monolazy enables you to select specific numbers rolled and lists them for rerolling.
+- Efficient Management: Easily add or remove numbers from the reroll list with just a few taps.
+- Clear Functionality: The "Reroll" button clears the list, allowing you to start fresh for the next round.
+- User-Friendly Interface: Intuitive design and simple controls make it easy for users of all ages to navigate the app.
 
-## Expanding the ESLint configuration
+## How to Use
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Select Numbers: Choose the numbers you wish to roll by tapping on them.
+2. List for Reroll: Once you've selected your desired numbers, they will be listed for reroll.
+3. Reroll: Press the "Re-roll" button to clear the selected numbers.
 
-- Configure the top-level `parserOptions` property like this:
+## License
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This project is licensed under the [MIT License](./LICENSE).
