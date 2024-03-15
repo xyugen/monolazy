@@ -1,23 +1,12 @@
-body {
+#root {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   transition: all 0.5s ease-in-out;
 }
-
-body.flex-start {
-  justify-content: flex-start;
-}
-
-body.flex-end {
-  justify-content: flex-end;
-}
-
-body.center {
-  justify-content: center;
-}
-
 .container {
   width: 460px;
+  min-width: 300px;
   max-width: 460px;
 }
 
@@ -135,4 +124,12 @@ body.center {
 
 .toast-clear {
   background-color: var(--color-error);
+}
+
+/* RESPONSIVE */
+/* Desktop */
+@media screen and (min-width: 768px) {
+  container {
+    width: 460px;
+  }
 }
