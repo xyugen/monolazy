@@ -1,3 +1,13 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 460px;
+  max-width: 460px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -82,6 +92,12 @@
   cursor: pointer;
 }
 
+.alignment-options > button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+  cursor: pointer;
+}
+
 /* TOASTS */
 .toast {
   display: flex;
@@ -91,6 +107,7 @@
   border-radius: 5px;
   padding: 13px 15px;
   font-family: 'Poppins', sans-serif;
+  width: 100%;
 }
 
 .toast-reroll {

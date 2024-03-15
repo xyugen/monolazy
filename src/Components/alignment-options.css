@@ -1,0 +1,37 @@
+/* ALIGNMENT OPTIONS */
+.alignment-options {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+
+    display: flex;
+    gap: 10px;
+    border: 2px solid var(--color-secondary);
+    padding: 1rem;
+    border-radius: 50px;
+
+    transition: justify-content 0.5s ease-in-out;
+}
+
+.alignment-options>button {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.alignment-options>button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+/* Desktop */
+@media screen and (min-width: 768px) {
+    .alignment-options {
+        visibility: visible;
+    }
+}

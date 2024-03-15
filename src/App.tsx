@@ -2,7 +2,8 @@ import { Toaster, toast } from 'sonner';
 import './App.css'
 import DiceButton from './Components/DiceButton'
 import { useState } from 'react';
-import Trash from './Assets/mdi_trash.svg';
+import { Trash } from './Assets';
+import AlignmentButtons from './Components/AlignmentButtons';
 
 const App = () => {
   const diceNumbers: number[] = Array.from({ length: 12 }, (_, index) => index + 1);
@@ -13,6 +14,7 @@ const App = () => {
     if (diceRolls.length > 0) {
       toast.info('Re-rolled', {
         className: 'toast-reroll',
+        position: 'bottom-center',
       })
       
       setDiceRolls([])
@@ -20,6 +22,7 @@ const App = () => {
     } else {
       toast.warning('Already re-rolled!', {
         className: 'toast-reroll',
+        position: 'bottom-center',
       })
     }
   }
@@ -28,6 +31,7 @@ const App = () => {
     toast.info('Diced a ' + diceNumber + '!', {
       className: 'toast-dice',
       icon: '🎲',
+      position: 'bottom-center',
     })
 
     setDiceRolls([...diceRolls, diceNumber])
@@ -44,6 +48,7 @@ const App = () => {
   const handleClearButton = (index: number) => {
     toast.error('Cleared a ' + diceRolls[index] + '!', {
       className: 'toast-clear',
+      position: 'bottom-center',
     })
 
     const newDiceRolls = diceRolls.filter((_, i) => i !== index)
@@ -56,7 +61,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className='container'>
       <div className='header'>
         <h1>Monolazy</h1>
         <button className='reset-button' onClick={handleReroll}>RE-ROLL</button>
@@ -86,7 +91,9 @@ const App = () => {
         className: 'toast',
         duration: 1000,
       }} />
-    </>
+
+      <AlignmentButtons />
+    </div>
   )
 }
 
