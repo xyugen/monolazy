@@ -1,6 +1,8 @@
 import './App.css'
+import DiceButton from './Components/DiceButton'
 
-function App() {
+const App = () => {
+  const diceNumbers = Array.from({ length: 12 }, (_, index) => index + 1);
 
   return (
     <>
@@ -10,20 +12,9 @@ function App() {
       </div>
 
       <div className='dice-button-container'>
-        <button className='dice-button w-full'>1</button>
-        <button className='dice-button w-full'>2</button>
-        <button className='dice-button w-full'>3</button>
-        <button className='dice-button w-full'>4</button>
-
-        <button className='dice-button w-full'>5</button>
-        <button className='dice-button w-full'>6</button>
-        <button className='dice-button w-full'>7</button>
-        <button className='dice-button w-full'>8</button>
-
-        <button className='dice-button w-full'>8</button>
-        <button className='dice-button w-full'>10</button>
-        <button className='dice-button w-full'>11</button>
-        <button className='dice-button w-full'>12</button>
+        {diceNumbers.map((diceNumber) => (
+          <DiceButton key={diceNumber} diceNumber={diceNumber} />
+        ))}
       </div>
 
       <div className='list'>
