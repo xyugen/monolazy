@@ -3,7 +3,9 @@
   flex-direction: row;
   justify-content: center;
   transition: all 0.5s ease-in-out;
+  max-height: 29rem;
 }
+
 .container {
   width: 460px;
   min-width: 300px;
@@ -36,13 +38,20 @@
   cursor: pointer;
 }
 
+/* DICE OPTIONS*/
+.dice-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
 .dice-button-container {
   display: grid;
   place-items: center;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  padding: 10px 20px;
 }
 
 .dice-button {
@@ -58,12 +67,25 @@
   color: var(--color-background);
 }
 
+.next-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid var(--color-primary);
+  width: 100%;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
 .diced-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 10px 20px;
-  max-height: 35rem;
+  height: 100%;
   overflow-y: auto;
 }
 
@@ -126,10 +148,6 @@
   background-color: var(--color-error);
 }
 
-/* RESPONSIVE */
-/* Desktop */
-@media screen and (min-width: 768px) {
-  container {
-    width: 460px;
-  }
+.toast-next {
+  background-color: var(--color-secondary);
 }
