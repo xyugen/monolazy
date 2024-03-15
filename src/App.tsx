@@ -7,8 +7,14 @@ const App = () => {
   
   const handleReroll = () => {
     toast.info('Re-rolled', {
-      unstyled: true,
       className: 'toast-reroll',
+    })
+  }
+
+  const handleDiceClick = (diceNumber: number) => {
+    toast.info('Diced a ' + diceNumber + '!', {
+      className: 'toast-dice',
+      icon: '🎲',
     })
   }
 
@@ -21,7 +27,7 @@ const App = () => {
 
       <div className='dice-button-container'>
         {diceNumbers.map((diceNumber) => (
-          <DiceButton key={diceNumber} diceNumber={diceNumber} />
+          <DiceButton key={diceNumber} diceNumber={diceNumber} onClick={() => handleDiceClick(diceNumber)} />
         ))}
       </div>
 

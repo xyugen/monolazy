@@ -65,3 +65,8 @@
   background-color: var(--color-warning);
   color: var(--color-background);
 }
+
+.toast-dice {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
