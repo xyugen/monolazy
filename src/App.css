@@ -49,3 +49,19 @@
 .w-full {
   width: 100%;
 }
+
+/* TOASTS */
+.toast {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  padding: 13px 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.toast-reroll {
+  background-color: var(--color-warning);
+  color: var(--color-background);
+}
