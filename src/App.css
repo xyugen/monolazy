@@ -53,11 +53,27 @@
   padding: 10px 20px;
 }
 
+.diced-number {
+  display: flex;
+  justify-content: space-between;
+}
+
 .diced-number > * {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+
+.diced-label {
+  font-size: large;
+}
+
+.clear-button {
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: 2px solid var(--color-error);
+  cursor: pointer;
 }
 
 /* TOASTS */
@@ -79,4 +95,8 @@
 .toast-dice {
   background-color: var(--color-primary);
   color: var(--color-background);
+}
+
+.toast-clear {
+  background-color: var(--color-error);
 }

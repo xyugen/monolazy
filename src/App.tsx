@@ -2,6 +2,7 @@ import { Toaster, toast } from 'sonner';
 import './App.css'
 import DiceButton from './Components/DiceButton'
 import { useState } from 'react';
+import Trash from './Assets/mdi_trash.svg';
 
 const App = () => {
   const diceNumbers: number[] = Array.from({ length: 12 }, (_, index) => index + 1);
@@ -40,6 +41,20 @@ const App = () => {
     });
   }
 
+  const handleClearButton = (index: number) => {
+    toast.error('Cleared a ' + diceRolls[index] + '!', {
+      className: 'toast-clear',
+    })
+
+    const newDiceRolls = diceRolls.filter((_, i) => i !== index)
+    setDiceRolls(newDiceRolls)
+    setCheckedState((prevState) => {
+      const newState = [...prevState];
+      newState[index] = false;
+      return newState;
+    });
+  }
+
   return (
     <>
       <div className='header'>
@@ -58,9 +73,9 @@ const App = () => {
           <div className='diced-number' key={index}>
             <div>
               <input name={'dice' + index} id={'dice' + index} type="checkbox" onChange={() => handleDicedChecked(index)} />
-              <label htmlFor={'dice' + index} style={{ textDecoration: checkedState[index] ? 'line-through' : 'none' }}>{diceRoll}</label>
+              <label className='diced-label' htmlFor={'dice' + index} style={{ textDecoration: checkedState[index] ? 'line-through' : 'none' }}>{diceRoll}</label>
             </div>
-            
+            <button className='clear-button'><img src={Trash} alt="Trash" onClick={() => handleClearButton(index)} /></button>
           </div>
         ))
         }
