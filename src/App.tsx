@@ -76,7 +76,11 @@ const App = () => {
         position: 'bottom-center',
       })
     }
-  } 
+  }
+
+  useEffect(() => {
+    
+  }, [checkedState])
 
   return (
     <div className='container'>
@@ -105,7 +109,7 @@ const App = () => {
             <div>
               <p className='diced-number-label'>{index + 1}.</p>
               <input name={'dice' + index} id={'dice' + index} type="checkbox" onChange={() => handleDicedChecked(index)} checked={checkedState[index]} />
-              <label className='diced-label' htmlFor={'dice' + index} style={{ textDecoration: checkedState[index] ? 'line-through' : 'none' }}>{diceRoll}</label>
+              <label className='diced-label' htmlFor={'dice' + index} style={{ textDecoration: checkedState[index] ? 'line-through' : 'none', color: checkedState[index] ? 'var(--color-error)' : 'var(--color-foreground)' }}>{diceRoll}</label>
             </div>
             <button className='clear-button'><img src={Trash} alt="Trash" onClick={() => handleClearButton(index)} /></button>
           </div>
