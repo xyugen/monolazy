@@ -72,6 +72,7 @@ const App = () => {
         {diceRolls.map((diceRoll, index) => (
           <div className='diced-number' key={index}>
             <div>
+              <p className='diced-number-label'>{index + 1}.</p>
               <input name={'dice' + index} id={'dice' + index} type="checkbox" onChange={() => handleDicedChecked(index)} />
               <label className='diced-label' htmlFor={'dice' + index} style={{ textDecoration: checkedState[index] ? 'line-through' : 'none' }}>{diceRoll}</label>
             </div>
@@ -83,6 +84,7 @@ const App = () => {
       <Toaster toastOptions={{
         unstyled: true,
         className: 'toast',
+        duration: 1000,
       }} />
     </>
   )
